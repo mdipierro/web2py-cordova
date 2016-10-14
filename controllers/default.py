@@ -11,9 +11,6 @@
 def index():
     return dict()
 
-def main():
-    redirect(URL('static','index.html'))
-
 def search():
     ids = Whoosh().search(request.vars.q)
     rows = db(db.doc.id.belongs(ids)).select()
