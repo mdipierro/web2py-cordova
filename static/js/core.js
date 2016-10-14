@@ -49,14 +49,15 @@ var Core = function(extensions) {
     var config = {
         el: '#vue',
         data: {
-            page: ''        /* page name */,
-            state: {},      /* global page state */
+            page: '',        /* page name */
+            state: {}        /* global page state */
         },
         filters: {
-            marked: marked
+            marked: marked,
         },
         methods: {
             goto: function(page, state) { self.vue.page=page; self.vue.state=state; },
+            upload: self.upload // <input type="file" v-on:change="upload($event.target,'name')">
         }
     };
     if(extensions.data) jQuery.extend(config.data, extensions.data);

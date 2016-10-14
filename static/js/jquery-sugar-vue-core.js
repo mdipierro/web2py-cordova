@@ -217,6 +217,7 @@ var Core = function(extensions) {
         },
         methods: {
             goto: function(page, state) { self.vue.page=page; self.vue.state=state; },
+            upload: self.upload
         }
     };
     if(extensions.data) jQuery.extend(config.data, extensions.data);

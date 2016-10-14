@@ -5,9 +5,6 @@ var Widget = function() {
             data: {
                 keywords: '',
                 docs: []
-            },
-            filters: {
-                marked: marked
             }
         });
     self.retrieve_docs = function() {
