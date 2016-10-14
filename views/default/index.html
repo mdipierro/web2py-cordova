@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Example</title>
+    <style>
+      * { border: 0; margin:0; padding: 0; font-family: helvetica;}
+      body { background: url('{{=URL('static','images/iphone.jpg')}}') no-repeat white; }
+      iframe {
+      position: absolute;
+      margin-left: 320px;
+      margin-top: 110px;
+      width:340px;
+      height:550px;
+      overflow:hide;
+      z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe src="{{=URL('default','main')}}"></iframe>
+  </body>
+</html>
+
