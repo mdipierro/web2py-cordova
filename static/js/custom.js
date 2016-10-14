@@ -1,4 +1,4 @@
-var BASE = 'http://127.0.0.1:8000/cordova/';
+var BASE = window.location.href.split('/').splice(0,4).join('/')+'/';
 
 var Widget = function() {
     self = Core({
