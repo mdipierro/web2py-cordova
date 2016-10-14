@@ -3,7 +3,9 @@
 This app provides an example of a scaffold app based on:
 
 - web2py (for serverside logic, database abstraction, and auth)
-- vue.js (for single page rsponsive app)
+- jquery.js
+- sugar.js (for date, throttling, debounce, etc)
+- vue.js (for single page responsive app)
 - whoosh (for full text search)
 - stupid.css (for style)
 
@@ -31,3 +33,13 @@ cordova run browser
 cordova run android
 cordova run ios
 ```
+
+### License
+
+BSD
+
+### Notes
+
+This is a work in progress and the plan is to make it easier to build responsive apps
+that work with web and Crodova out of the box, easy to develop and powered by the web2py
+backend.
