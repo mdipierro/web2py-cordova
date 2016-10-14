@@ -41,5 +41,5 @@ BSD
 ### Notes
 
 This is a work in progress and the plan is to make it easier to build responsive apps
-that work with web and Crodova out of the box, easy to develop and powered by the web2py
+that work with web and Cordova out of the box, easy to develop and powered by the web2py
 backend.
