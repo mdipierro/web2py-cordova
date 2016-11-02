@@ -19,7 +19,8 @@ myconf = AppConfig(reload=True)
 
 if not request.env.web2py_runtime_gae:
     ## if NOT running on Google App Engine use SQLite or other DB
-    db = DAL(myconf.get('db.uri'), 
+    db = DAL(myconf.get('db.uri'),
+             folder = myconf.get('db.folder'),
              pool_size = myconf.get('db.pool_size'),
              migrate_enabled = myconf.get('db.migrate'),
              check_reserved = ['all'])
