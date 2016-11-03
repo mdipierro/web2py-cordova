@@ -14,15 +14,45 @@
     <main>
       <div class="container max900">
         <div class="fill">
-          <div class="padded">
-            <input v-model="keywords" placeholder="type some common words like 'good' or 'one'"/>
-          </div>      
+          <div class="padded" style="text-align: center;">
+            <button v-on:click="goto('search', {})">Search</button>
+            <button v-on:click="goto('plaid', {})">Make Payment</button>
+          </div>
         </div>
-        <div class="fill">
-          <div class="padded" v-for="doc in docs">
-            <div class="lifted padded">
-              <h5>${doc.title}</h5>
-              <p>${doc.body}</p>
+        <div v-show="page === 'search'">
+          <div class="fill">
+            <div class="padded">
+              <input v-model="keywords" placeholder="type some common words like 'good' or 'one'"/>
+            </div>
+          </div>
+          <div class="fill">
+            <div class="padded" v-for="doc in docs">
+              <div class="lifted padded">
+                <h5>${doc.title}</h5>
+                <p>${doc.body}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-show="page === 'plaid'">
+          <div class="fill">
+            <div class="padded">
+              <button v-on:click="openPlaidLink">Authorize Bank Account</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-show="page === 'payment'">
+          <div class="fill">
+            <div class="padded">
+              <form id="paymentForm" v-on:submit.prevent="submitPayment">
+                <label for="amount">Amount</label>
+                <input v-model="paymentAmount" type="text" name="amount"><br><br>
+                <div>Payment will be made from your ${bankAccount.institution} ${bankAccount.name} account.</div>
+                <br>
+                <div v-show="paymentStatus != ''">${ paymentStatus }<br><br></div>
+                <input id="paymentSubmit" type="submit" value="Submit">
+              </form>
             </div>
           </div>
         </div>
@@ -32,5 +62,7 @@
     </footer>
   </body>
   <script src="js/jquery-sugar-vue-core.js"></script>
+  <script src="cordova.js"></script>
+  <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
   <script src="js/custom.js"></script>
 </html>
